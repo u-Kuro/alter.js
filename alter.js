@@ -11,6 +11,7 @@ function alter(element_s, parameters={}) {
     // Apply parameters
     if(typeof parameters['keyframes']!=="undefined"){
         const options = {}
+        const animations = []
         for (const key in parameters) {
             if (key === 'keyframes' || key === 'styles') continue
             options[key] = parameters[key]
@@ -20,7 +21,7 @@ function alter(element_s, parameters={}) {
             if(keyframes instanceof Array){
                 for(let i=0; i<element_s.length; i++) {
                     if(isNativeAnimateFunction(element_s[i])){
-                        element_s[i].animate(keyframes, options)
+                        animations.push(element_s[i].animate(keyframes, options))
                     }
                 }
             }
@@ -29,11 +30,12 @@ function alter(element_s, parameters={}) {
                 const keyframes = parameters['keyframes'].slice(-1)
                 for(let i=0; i<element_s.length; i++) {
                     if(isNativeAnimateFunction(element_s[i])){
-                        element_s[i].animate(keyframes, options)
+                        animations.push(element_s[i].animate(keyframes, options))
                     }
                 }
             }
         }
+        return animations.length===1? animations[0] : animations
     } else if(typeof parameters['styles']!=="undefined"){
         const styles = parameters?.styles || parameters?.keyframes?.[parameters?.keyframes?.length-1]
         if(styles){
@@ -43,9 +45,9 @@ function alter(element_s, parameters={}) {
                 }
             }
         }
+        return element_s;
     }
     // return element(s)
-    return element_s;
 
     // Helper function
     function isNativeAnimateFunction (element) {
