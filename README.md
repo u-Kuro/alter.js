@@ -15,9 +15,9 @@ You can install Alter.js via npm:
 ```shell
 npm install alter-js
 ```
-Alternatively, you can include the script in your HTML file:
+Alternatively, you can include the cdn in your HTML file:
 ```php
-<script src="path/to/alter.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/u-Kuro/alter.js/cdn/alter.js"></script>
 ```
 
 ## Usage
