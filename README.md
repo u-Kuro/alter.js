@@ -33,9 +33,10 @@ let animation = alter(element, {
     { transform: 'scale(1)' }
   ]
 });
+
 animation.onfinish = () => {
-  animation.cancel()
-}
+  animation.cancel();
+};
 ```
 You can also apply styles to multiple Elements:
 ```js
