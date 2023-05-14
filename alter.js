@@ -55,3 +55,5 @@ function alter(element_s, parameters={}) {
         return element?.style instanceof CSSStyleDeclaration && element?.__proto__ === Element.prototype;
     }
 }
+
+module.exports = alter

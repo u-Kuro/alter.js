@@ -1,6 +1,6 @@
 {
   "name": "@kushii/alter.js",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "description": "Alter provides a simple and immediate way to modify the visual appearance and behavior of one or multiple elements, allowing manipulation of custom styles or create animations with keyframes.",
   "main": "alter.js",
   "scripts": {
