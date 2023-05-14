@@ -54,6 +54,6 @@ function alter(element_s, parameters={}) {
         return Element.prototype.animate.toString() === element?.animate?.toString?.();
     }
     function isNativeStyleProperty(element) {
-        return element?.style instanceof CSSStyleDeclaration && element?.__proto__ === Element.prototype;
+        return element?.style instanceof CSSStyleDeclaration;
     }
 }
