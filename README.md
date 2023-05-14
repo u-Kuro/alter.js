@@ -25,7 +25,7 @@ To use Alter.js, simply call the `alter()` function with the target element(s) a
 ```js
 const element = document.getElementById('myElement');
 
-alter(element, {
+let animation = alter(element, {
   duration: 1000,
   keyframes: [
     { transform: 'scale(1)' },
@@ -33,6 +33,10 @@ alter(element, {
     { transform: 'scale(1)' }
   ]
 });
+
+animation.onfinish = () => {
+  animation.cancel();
+};
 ```
 You can also apply styles to multiple Elements:
 ```js
