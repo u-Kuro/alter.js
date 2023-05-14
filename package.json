@@ -1,0 +1,19 @@
+{
+  "name": "alter",
+  "version": "1.0.0",
+  "description": "Alter provides a simple and immediate way to modify the visual appearance and behavior of one or multiple elements, allowing manipulation of custom styles or create animations with keyframes.",
+  "main": "alter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u-Kuro/alter.js.git"
+  },
+  "author": "Reaven Dupitas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/u-Kuro/alter.js/issues"
+  },
+  "homepage": "https://github.com/u-Kuro/alter.js#readme"
+}
