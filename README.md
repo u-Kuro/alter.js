@@ -26,7 +26,7 @@ To use Alter.js, simply call the `alter()` function with the target element(s) a
 const element = document.getElementById('myElement');
 
 alter(element, {
-  duration: 1000, // Not Adding a duration will skip code execution to the last keyframe
+  duration: 1000,
   keyframes: [
     { transform: 'scale(1)' },
     { transform: 'scale(1.5)' },
