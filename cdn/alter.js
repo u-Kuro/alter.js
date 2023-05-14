@@ -10,7 +10,7 @@ function alter(element_s, parameters={}) {
     } else if(!(element_s instanceof HTMLCollection) && !(element_s instanceof NodeList)) { return }
     // Apply parameters
     if(typeof parameters['keyframes']!=="undefined"){
-        const options = {}
+        const options = {duration:200,fill:"forwards",easing:'ease'} // DEFAULTS
         const animations = []
         for (const key in parameters) {
             if (key === 'keyframes' || key === 'styles') continue
