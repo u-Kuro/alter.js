@@ -12,17 +12,8 @@ function alter(element_s, parameters={}) {
     if(typeof parameters['keyframes']!=="undefined"){
         const options = {duration:200,fill:"forwards",easing:'ease'} // DEFAULTS
         const animations = []
-        let scrollTo, scrollIntoView;
         for (const key in parameters) {
             if (key === 'keyframes' || key === 'styles') continue
-            if (key === 'scrollTo') {
-                scrollTo = parameters[key]
-                continue
-            }
-            if(key === 'scrollIntoView') {
-                scrollIntoView = parameters[key]
-                continue
-            }
             options[key] = parameters[key]
         }
         if(typeof parameters['duration']==='number'){
@@ -31,19 +22,6 @@ function alter(element_s, parameters={}) {
                 for(let i=0; i<element_s.length; i++) {
                     if(isNativeAnimateFunction(element_s[i])){
                         animations.push(element_s[i].animate(keyframes, options))
-                    }
-                    if(typeof scrollTo==='number'){
-                        if(element_s[i]===window||isBodyOrHtmlElement(element_s[i])){
-                            window.scroll({
-                                ...scrollTo,
-                                behavior: 'smooth'
-                            })
-                        }
-                        if(element_s[0] instanceof Element){
-                            element_s[0].scrollIntoView({
-                                behavior: 'smooth'
-                            })
-                        }
                     }
                 }
             }
@@ -78,7 +56,4 @@ function alter(element_s, parameters={}) {
     function isNativeStyleProperty(element) {
         return element?.style instanceof CSSStyleDeclaration && element?.__proto__ === Element.prototype;
     }
-    function isBodyOrHtmlElement(element) {
-        return element === document.body || element === document.documentElement;
-      }
 }
