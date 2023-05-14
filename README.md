@@ -1,6 +1,6 @@
 # Alter.js
 
-Alter.js is a lightweight JavaScript library for immediate manipulation of CSS styles and animations on one or multiple elements. It provides a simple and intuitive way to dynamically modify the visual appearance and behavior of elements on your web page.
+Alter.js is a lightweight JavaScript library for immediate manipulation of CSS styles and animations on one or multiple elements. It provides a simple and intuitive way to dynamically modify the visual appearance and behavior of elements on your web page ( [ALTER NPMJS](https://www.npmjs.com/package/@kushii/alter.js) ).
 
 ## Features
 
