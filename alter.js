@@ -9,22 +9,32 @@ function alter(element_s, parameters={}) {
         else { element_s = Array.from(element_s) }
     } else if(!(element_s instanceof HTMLCollection) && !(element_s instanceof NodeList)) { return }
     // Apply parameters
-    if(typeof parameters['duration']==="number"){
+    if(typeof parameters['keyframes']!=="undefined"){
         const options = {}
-        const keyframes = parameters.keyframes
         for (const key in parameters) {
-            if (key !== 'keyframes') {
-                options[key] = parameters[key]
-            }
+            if (key === 'keyframes' || key === 'styles') continue
+            options[key] = parameters[key]
         }
-        if(keyframes instanceof Array){
-            for(let i=0; i<element_s.length; i++) {
-                if(isNativeAnimateFunction(element_s[i])){
-                    element_s[i].animate(keyframes, options)
+        if(typeof parameters['duration']==='number'){
+            const keyframes = parameters.keyframes
+            if(keyframes instanceof Array){
+                for(let i=0; i<element_s.length; i++) {
+                    if(isNativeAnimateFunction(element_s[i])){
+                        element_s[i].animate(keyframes, options)
+                    }
+                }
+            }
+        } else {
+            if(parameters['keyframes'] instanceof Array){
+                const keyframes = parameters['keyframes'].slice(-1)
+                for(let i=0; i<element_s.length; i++) {
+                    if(isNativeAnimateFunction(element_s[i])){
+                        element_s[i].animate(keyframes, options)
+                    }
                 }
             }
         }
-    } else {
+    } else if(typeof parameters['styles']!=="undefined"){
         const styles = parameters?.styles || parameters?.keyframes?.[parameters?.keyframes?.length-1]
         if(styles){
             for(let i=0; i<element_s.length; i++) {
