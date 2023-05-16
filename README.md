@@ -13,7 +13,7 @@ Alter.js is a lightweight JavaScript library for immediate manipulation of CSS s
 You can install Alter.js via npm:
 
 ```shell
-npm install alter-js
+npm install @kushii/alter.js
 ```
 Alternatively, you can include the cdn in your HTML file:
 ```php
