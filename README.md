@@ -17,26 +17,23 @@ npm install alter-js
 ```
 Alternatively, you can include the cdn in your HTML file:
 ```php
-<script src="https://cdn.jsdelivr.net/gh/u-Kuro/alter.js/cdn/alter.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/u-Kuro/alter.js/alter.js"></script>
 ```
 
 ## Usage
 To use Alter.js, simply call the `alter()` function with the target element(s) and the desired parameters. Here's a basic example:
 ```js
-const element = document.getElementById('myElement');
-
-let animation = alter(element, {
-  duration: 1000,
+alter('#myElement', {
   keyframes: [
-    { transform: 'scale(1)' },
-    { transform: 'scale(1.5)' },
-    { transform: 'scale(1)' }
-  ]
+    { opacity: '1' },
+    { opacity: '0' }
+  ],
+  duration: 200,
+  easing: 'ease',
+  callback: () => {
+    Object.assign(element.style, { opacity: 0, display: 'none' });
+  }
 });
-
-animation.onfinish = () => {
-  animation.cancel();
-};
 ```
 You can also apply styles to multiple Elements:
 ```js
@@ -44,8 +41,8 @@ const elements = document.getElementByClassName('.myElements');
 
 alter(elements, {
   styles: {
-    color: 'red',
-    backgroundColor: 'yellow'
+    color: 'white',
+    backgroundColor: 'black'
   }
 });
 ```
