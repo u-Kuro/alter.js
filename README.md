@@ -19,6 +19,9 @@ Alternatively, you can include the cdn in your HTML file:
 ```php
 <script src="https://cdn.jsdelivr.net/gh/u-Kuro/alter.js/alter.js"></script>
 ```
+```php
+<script src="https://cdn.jsdelivr.net/gh/u-Kuro/alter.js/alter.min.js"></script>
+```
 
 ## Usage
 To use Alter.js, simply call the `alter()` function with the target element(s) and the desired parameters. Here's a basic example:
